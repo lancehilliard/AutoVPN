@@ -30,7 +30,7 @@ if %errorlevel%==1 goto ConnectToVpn
 
 echo We can access the remote LAN!
 echo We'll close this window in a few seconds...
-timeout 10
+timeout 3
 goto End
 
 
