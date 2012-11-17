@@ -8,10 +8,10 @@ set VPN_NAME=%AUTOVPN_VPN_NAME%
 set IP_ADDRESS_ACCESSIBLE_ON_REMOTE_LAN=%AUTOVPN_REMOTE_LAN_IP%
 
 :VerifyNetworkAvailable
-cls
-echo Verifying we're on the local LAN now...
+echo Verifying we're on the Internet before beginning...
 timeout 1 >NUL 2>&1
 ping -n 1 %IP_ADDRESS_ACCESSIBLE_FROM_ALL_NETWORKS% | find "TTL" >NUL 2>&1
+cls
 if %errorlevel%==1 goto VerifyNetworkAvailable
 goto TestVpnConnection
 
